@@ -13,4 +13,8 @@ dependencies = [
     "scikit-learn>=1.6.1",
     "sqlalchemy>=2.0.40",
     "streamlit>=1.44.1",
+    "openai>=1.10.0",           
+    "python-dotenv>=1.0.0",    
+    "faker>=19.2.0",             
+    "seaborn>=0.12.2",
 ]
