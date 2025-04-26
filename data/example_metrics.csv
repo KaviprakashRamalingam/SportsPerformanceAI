@@ -1,0 +1,22 @@
+Athlete,Date,Session,Strength,Speed,Endurance,Recovery Time,Technique Score,Power,Agility,Flexibility
+Athlete1,2023-01-01,Morning,85,78,82,24,88,80,76,70
+Athlete1,2023-01-08,Morning,86,79,83,24,89,82,77,70
+Athlete1,2023-01-15,Morning,88,79,85,23,90,84,78,71
+Athlete1,2023-01-22,Morning,90,80,86,22,91,86,79,72
+Athlete1,2023-01-29,Morning,92,82,86,22,91,89,80,73
+Athlete1,2023-02-05,Morning,94,83,87,21,92,91,82,74
+Athlete1,2023-02-12,Morning,95,85,88,20,93,93,83,75
+Athlete2,2023-01-01,Morning,76,88,85,20,84,78,90,79
+Athlete2,2023-01-08,Morning,77,89,86,20,85,79,91,80
+Athlete2,2023-01-15,Morning,79,90,86,19,85,81,92,80
+Athlete2,2023-01-22,Morning,80,92,87,19,86,82,93,81
+Athlete2,2023-01-29,Morning,82,93,88,18,87,84,94,82
+Athlete2,2023-02-05,Morning,83,94,89,18,88,85,95,83
+Athlete2,2023-02-12,Morning,85,95,90,17,89,87,96,84
+Athlete3,2023-01-01,Morning,90,75,90,19,85,83,75,92
+Athlete3,2023-01-08,Morning,91,76,90,19,86,84,76,93
+Athlete3,2023-01-15,Morning,92,76,91,18,87,85,76,94
+Athlete3,2023-01-22,Morning,93,77,92,18,88,86,77,95
+Athlete3,2023-01-29,Morning,94,78,93,17,89,87,78,96
+Athlete3,2023-02-05,Morning,95,79,94,17,90,88,79,97
+Athlete3,2023-02-12,Morning,96,80,95,16,91,89,80,98
