@@ -990,6 +990,8 @@ elif page == "Knowledge Base":
     }
     .chat-message .content {
         display: inline-block;
+        background-color: #333333;
+        color: white;
     }
     .follow-up-btn {
         margin-top: 5px;
