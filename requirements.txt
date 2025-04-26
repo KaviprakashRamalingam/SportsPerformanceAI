@@ -7,3 +7,4 @@ sqlalchemy==2.0.21
 psycopg2-binary==2.9.9
 matplotlib==3.8.0
 faiss-cpu==1.7.4
+openai
