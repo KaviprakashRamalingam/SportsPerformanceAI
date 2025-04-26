@@ -384,7 +384,7 @@ def generate_recommendations_manual(performance_data=None, athlete=None, form_an
         except Exception as e:
             print(f"Error generating performance recommendations: {e}")
             return {
-                "General": ["Error analyzing performance data. Focus on balanced training."]
+                "General": ["Error analyzing performance data. Focus on balanced training.{avg_scores}"]
             }
 
     # Default fallback
