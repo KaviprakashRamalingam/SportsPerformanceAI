@@ -980,7 +980,7 @@ elif page == "Knowledge Base":
         flex-direction: column;
     }
     .chat-message.user {
-        background-color: #e9ecef;
+        
         border-left: 5px solid #1E88E5;
     }
     .chat-message.assistant {
