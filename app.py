@@ -28,15 +28,55 @@ def add_bg_from_url():
         f"""
         <style>
         .stApp {{
-            background-image: linear-gradient(to bottom, rgba(240, 244, 248, 0.8), rgba(240, 244, 248, 0.8)), 
+            background-image: linear-gradient(to bottom, rgba(20, 20, 30, 0.95), rgba(20, 20, 30, 0.95)), 
                               url("https://img.freepik.com/free-vector/abstract-geometric-wireframe-background_52683-59421.jpg");
             background-attachment: fixed;
             background-size: cover;
+            color: white;
+        }}
+        
+        /* Main content area dark background */
+        .css-1d391kg {{
+            background-color: rgba(30, 30, 40, 0.5);
+        }}
+        
+        /* Override other Streamlit styling for consistent appearance */
+        .css-18e3th9 {{
+            padding-top: 0rem;
+            padding-bottom: 0rem;
+            padding-left: 5rem;
+            padding-right: 5rem;
+        }}
+        
+        .css-1d391kg {{
+            padding-top: 1rem;
+            padding-right: 1rem;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+        }}
+        
+        /* Dark table styling that matches Replit appearance */
+        .stDataFrame table {{
+            background-color: #212121;
+            color: white;
+        }}
+        
+        .stDataFrame th {{
+            background-color: #333333;
+            color: white;
+            font-weight: normal;
+            border: none;
+        }}
+        
+        .stDataFrame td {{
+            background-color: #212121;
+            color: white;
+            border: none;
         }}
         
         /* Global text styling */
         h1, h2, h3, h4, h5, h6 {{
-            color: #1e3a8a;
+            color: white;
             font-weight: 600;
         }}
         
@@ -67,27 +107,74 @@ def add_bg_from_url():
         .dataframe {{
             border-radius: 5px;
             overflow: hidden;
-            border: 1px solid #e0e0e0;
+            border: 1px solid #333;
+            background-color: #212121;
+            color: white;
+        }}
+        
+        /* Table headers and rows */
+        table thead th {{
+            background-color: #333333 !important;
+            color: white !important;
+        }}
+        
+        table tbody tr {{
+            background-color: #212121 !important;
+            color: white !important;
+        }}
+        
+        table tbody tr:nth-child(even) {{
+            background-color: #262626 !important;
         }}
         
         /* Input fields styling */
         .stTextInput > div > div > input {{
             border-radius: 4px;
-            border: 1px solid #ddd;
+            border: 1px solid #444;
+            background-color: #262626;
+            color: white;
         }}
         
         .stSelectbox > div > div > div {{
             border-radius: 4px;
-            border: 1px solid #ddd;
+            border: 1px solid #444;
+            background-color: #262626;
+            color: white;
+        }}
+        
+        /* Inputs with focus */
+        .stTextInput > div > div > input:focus {{
+            border: 1px solid #1E88E5;
+            box-shadow: 0 0 0 2px rgba(30, 136, 229, 0.2);
+        }}
+        
+        /* Dropdown menus */
+        div[data-baseweb="select"] > div {{
+            background-color: #262626;
+            border-color: #444;
+        }}
+        
+        div[data-baseweb="select"] ul {{
+            background-color: #333;
+        }}
+        
+        div[data-baseweb="select"] li:hover {{
+            background-color: #444;
         }}
         
         /* Make content stand out better */
         .content-card {{
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(33, 33, 33, 0.9);
             border-radius: 8px;
             padding: 1.5rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             margin-bottom: 1rem;
+            color: white;
+        }}
+        
+        /* Dark theme headers */
+        .main h1, .main h2, .main h3, .main h4, .main h5, .main h6 {{
+            color: white !important;
         }}
         </style>
         """,
@@ -112,7 +199,7 @@ def vertical_tabs():
             display: flex;
             flex-direction: column;
             gap: 10px;
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: rgba(33, 33, 33, 0.9);
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -122,15 +209,15 @@ def vertical_tabs():
         div[data-testid="stRadio"] label {
             padding: 12px 18px;
             border-radius: 8px;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(48, 48, 48, 0.9);
             transition: all 0.3s ease;
             text-align: left;
             font-weight: 500;
-            color: #455a64;
+            color: #ffffff;
             display: flex;
             align-items: center;
             cursor: pointer;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
             border-left: 3px solid transparent;
         }
         
@@ -167,9 +254,9 @@ def vertical_tabs():
         
         /* Hover effect for tabs */
         div[data-testid="stRadio"] label:hover {
-            background-color: rgba(240, 247, 255, 1.0);
+            background-color: rgba(64, 64, 64, 0.9);
             transform: translateX(3px);
-            border-left: 3px solid #90caf9;
+            border-left: 3px solid #1E88E5;
         }
         
         /* Selected tab styling */
@@ -238,17 +325,34 @@ with st.sidebar:
     st.markdown("""
     <style>
     div[data-testid="stVerticalBlock"] div[data-testid="stVerticalBlock"] {
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(33, 33, 33, 0.95);
         padding: 10px;
         border-radius: 10px;
     }
     .athlete-selector {
-        background-color: rgba(255, 255, 255, 0.8);
+        background-color: rgba(48, 48, 48, 0.98);
         padding: 15px;
         border-radius: 8px;
         margin-top: 20px;
         margin-bottom: 20px;
         border-left: 4px solid #1E88E5;
+        color: white;
+    }
+    
+    /* Sidebar title styling */
+    .sidebar .sidebar-content .block-container h1 {
+        color: white;
+    }
+    
+    /* Sidebar info, warning and success messages */
+    .sidebar .stAlert {
+        background-color: rgba(33, 33, 33, 0.8);
+    }
+    
+    /* Sidebar expander */
+    .sidebar details {
+        background-color: rgba(33, 33, 33, 0.8);
+        border-radius: 8px;
     }
     </style>
     """, unsafe_allow_html=True)
