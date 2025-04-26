@@ -296,8 +296,9 @@
 
 
 import openai
+import os
 
-openai.api_key = "OPENAI_API_KEY"  # Replace with your actual OpenAI API key
+openai.api_key = os.getenv("OPENAI_API_KEY")  # Replace with your actual OpenAI API key
 
 def generate_recommendations_ai(performance_data=None, athlete=None, form_analysis=None):
     if performance_data is not None and athlete is not None:
