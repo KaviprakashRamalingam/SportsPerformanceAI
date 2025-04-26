@@ -1281,7 +1281,7 @@ elif page == "Recommendations":
             # Generate recommendations based on performance data
             with st.spinner("Generating personalized recommendations..."):
                 try:
-                     recommendations = generate_recommendations(
+                     recommendations = generate_recommendations_manual(
                          performance_data=athlete_data,
                          athlete=selected_athlete,
                          form_analysis=st.session_state.form_analysis
