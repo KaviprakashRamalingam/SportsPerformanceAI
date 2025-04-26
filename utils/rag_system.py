@@ -70,7 +70,37 @@ def query_knowledge_base(query, num_results=5):
     Returns:
         dict: Query response with answer and sources
     """
+
     global kb_data, vectorizer, index, document_map
+    
+    # Quick topic filtering (simple keyword matching)
+    sports_keywords = [
+    "sports", "athlete", "performance", "training", "recovery", "exercise",
+    "strength", "conditioning", "endurance", "mobility", "flexibility", "injury",
+    "rehabilitation", "rehab", "stretching", "warmup", "cooldown", "nutrition",
+    "hydration", "coaching", "workout", "drills", "technique", "form", "posture",
+    "biomechanics", "sports science", "periodization", "fitness", "health",
+    "aerobic", "anaerobic", "cardio", "power", "speed", "agility", "reaction time",
+    "mental toughness", "focus", "sports psychology", "fatigue", "lactate threshold",
+    "VO2 max", "muscle soreness", "DOMS", "overtraining", "tapering", "game strategy",
+    "teamwork", "sportsmanship", "competition", "tournament", "match", "league",
+    "Olympics", "Paralympics", "soccer", "football", "basketball", "baseball",
+    "tennis", "swimming", "running", "cycling", "hockey", "rugby", "golf",
+    "wrestling", "boxing", "MMA", "skiing", "snowboarding", "climbing", "rowing",
+    "cricket", "badminton", "track and field", "triathlon", "surfing", "diving",
+    "weightlifting", "bodybuilding", "yoga", "pilates"
+    ]
+
+    
+    # Lowercase query
+    query_lower = query.lower()
+    
+    if not any(keyword in query_lower for keyword in sports_keywords):
+        return {
+            'query': query,
+            'answer': "⚠️ Please ask questions related to sports, performance, recovery, or training.",
+            'sources': []
+        }
     
     # Check if the knowledge base is initialized
     if kb_data is None or vectorizer is None or index is None:
