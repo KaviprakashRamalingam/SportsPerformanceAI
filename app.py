@@ -506,7 +506,13 @@ elif page == "Data Analysis":
     with data_source_tabs[0]:  # Upload Data tab
         # File uploader for performance data
         uploaded_file = st.file_uploader("Upload performance data (CSV format)", type=["csv"])
-        
+        # --------- Load Synthetic Data Button ----------
+        if st.button("Load Synthetic Data"):
+            synthetic_df = pd.read_csv("data/synthetic_performance_data.csv")
+            st.session_state.performance_data = synthetic_df
+            st.success("Loaded synthetic performance data!")
+        # ------------------------------------------------
+
         if uploaded_file is not None:
             try:
                 # Load and process the data
