@@ -15,7 +15,7 @@ from utils.visualization import create_performance_radar, plot_trend_analysis, p
 from utils.rag_system import query_knowledge_base, initialize_kb
 from utils.image_analyzer import analyze_form, detect_pose
 from utils.recommendation_engine import generate_recommendations
-# from utils.recommendation_engine import generate_recommendations_ai
+from utils.recommendation_engine import generate_recommendations_manual
 from utils.database import (
     get_all_athletes, get_or_create_athlete, 
     save_performance_data, save_form_analysis,
