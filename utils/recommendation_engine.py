@@ -307,41 +307,93 @@ def generate_recommendations_manual(performance_data=None, athlete=None, form_an
             athlete_df = performance_data[performance_data['Athlete'] == athlete]
             
             if athlete_df.empty:
-                recommendations["General"] = ["No specific performance data found. Focus on general fitness."]
+                recommendations["General"] = ["No specific performance data found. Focus on general fitness and consistency."]
                 return recommendations
             
             # Compute average scores
             avg_scores = athlete_df[["Speed", "Agility", "Strength", "Endurance", "Flexibility"]].mean()
             
-            # Customize recommendations based on actual averages
-            if avg_scores["Endurance"] < 70:
-                recommendations.setdefault("Endurance", []).append("Focus on longer cardio sessions to improve endurance.")
+            # Create detailed recommendations
+            if avg_scores["Endurance"] < 60:
+                recommendations.setdefault("Endurance Development", []).append(
+                    "Endurance is low. Add 3–4 long-duration aerobic sessions (running, cycling) per week at moderate intensity (60–70% HRmax)."
+                )
+            elif avg_scores["Endurance"] < 70:
+                recommendations.setdefault("Endurance Development", []).append(
+                    "Endurance slightly below ideal. Incorporate 2 interval running sessions and 2 steady-state cardio sessions weekly."
+                )
+            else:
+                recommendations.setdefault("Endurance Development", []).append(
+                    "Endurance is strong. Maintain current aerobic base with occasional interval training."
+                )
             
-            if avg_scores["Strength"] < 70:
-                recommendations.setdefault("Strength", []).append("Incorporate strength training twice a week.")
-            
-            if avg_scores["Agility"] < 70:
-                recommendations.setdefault("Agility", []).append("Include agility ladder drills and quick footwork exercises.")
-            
-            if avg_scores["Flexibility"] < 70:
-                recommendations.setdefault("Flexibility", []).append("Perform dynamic stretching routines daily.")
-            
-            if avg_scores["Speed"] < 70:
-                recommendations.setdefault("Speed", []).append("Integrate sprint intervals and plyometric exercises.")
-            
-            if not recommendations:
-                recommendations["General"] = ["Maintain current training balance. Keep improving!"]
-            
+            if avg_scores["Strength"] < 60:
+                recommendations.setdefault("Strength Training", []).append(
+                    "Strength is low. Focus on compound lifts (squats, deadlifts, presses) 3x/week, progressively overload weights every 2 weeks."
+                )
+            elif avg_scores["Strength"] < 70:
+                recommendations.setdefault("Strength Training", []).append(
+                    "Strength can be improved. Train full-body strength routines 2–3 times per week using moderate to heavy loads."
+                )
+            else:
+                recommendations.setdefault("Strength Training", []).append(
+                    "Strength levels are good. Focus on maintaining with 2x/week heavy training and prioritize injury prevention exercises."
+                )
+
+            if avg_scores["Agility"] < 60:
+                recommendations.setdefault("Agility Training", []).append(
+                    "Agility is weak. Integrate ladder drills, cone drills, and change-of-direction sprints 3x per week."
+                )
+            elif avg_scores["Agility"] < 70:
+                recommendations.setdefault("Agility Training", []).append(
+                    "Agility can be sharpened. Add quick-foot drills, shuttle runs, and multidirectional movement practice twice a week."
+                )
+            else:
+                recommendations.setdefault("Agility Training", []).append(
+                    "Agility is strong. Maintain sharpness through dynamic warm-ups and sport-specific drills."
+                )
+
+            if avg_scores["Flexibility"] < 60:
+                recommendations.setdefault("Flexibility & Mobility", []).append(
+                    "Flexibility is poor. Implement 15–20 minutes daily static and dynamic stretching, focus on hips, shoulders, and hamstrings."
+                )
+            elif avg_scores["Flexibility"] < 70:
+                recommendations.setdefault("Flexibility & Mobility", []).append(
+                    "Flexibility needs attention. Include yoga or dedicated mobility sessions 2–3 times weekly."
+                )
+            else:
+                recommendations.setdefault("Flexibility & Mobility", []).append(
+                    "Flexibility is good. Maintain by incorporating dynamic stretches during warm-ups."
+                )
+
+            if avg_scores["Speed"] < 60:
+                recommendations.setdefault("Speed & Power", []).append(
+                    "Speed is low. Schedule sprint interval sessions twice weekly, work on explosive starts and plyometric drills (box jumps, bounds)."
+                )
+            elif avg_scores["Speed"] < 70:
+                recommendations.setdefault("Speed & Power", []).append(
+                    "Speed can improve. Combine sprint work with strength training emphasizing posterior chain (glutes, hamstrings)."
+                )
+            else:
+                recommendations.setdefault("Speed & Power", []).append(
+                    "Speed performance is good. Maintain explosiveness with sprint drills and plyometric maintenance."
+                )
+
             return recommendations
-        
+
         except Exception as e:
             print(f"Error generating performance recommendations: {e}")
-            recommendations["General"] = ["Error analyzing performance data."]
-            return recommendations
-    
-    # Default general recommendation if no data
-    recommendations["General"] = ["Focus on building balanced athletic ability."]
-    return recommendations
+            return {
+                "General": ["Error analyzing performance data. Focus on balanced training."]
+            }
+
+    # Default fallback
+    return {
+        "General": [
+            "Focus on balanced athletic development: 2x strength, 2x endurance, 1x agility/mobility session weekly.",
+            "Track your progress monthly to adjust your program."
+        ]
+    }
 
 
 # def generate_recommendations_ai(performance_data=None, athlete=None, form_analysis=None):
