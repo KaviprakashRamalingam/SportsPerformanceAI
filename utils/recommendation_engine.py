@@ -298,7 +298,50 @@ def _calculate_trend(data_series):
     else:
         return 'decreasing'
 
+def generate_recommendations_manual(performance_data=None, athlete=None, form_analysis=None):
+    recommendations = {}
 
+    if performance_data is not None and athlete is not None:
+        try:
+            # Filter data for selected athlete
+            athlete_df = performance_data[performance_data['Athlete'] == athlete]
+            
+            if athlete_df.empty:
+                recommendations["General"] = ["No specific performance data found. Focus on general fitness."]
+                return recommendations
+            
+            # Compute average scores
+            avg_scores = athlete_df[["Speed", "Agility", "Strength", "Endurance", "Flexibility"]].mean()
+            
+            # Customize recommendations based on actual averages
+            if avg_scores["Endurance"] < 70:
+                recommendations.setdefault("Endurance", []).append("Focus on longer cardio sessions to improve endurance.")
+            
+            if avg_scores["Strength"] < 70:
+                recommendations.setdefault("Strength", []).append("Incorporate strength training twice a week.")
+            
+            if avg_scores["Agility"] < 70:
+                recommendations.setdefault("Agility", []).append("Include agility ladder drills and quick footwork exercises.")
+            
+            if avg_scores["Flexibility"] < 70:
+                recommendations.setdefault("Flexibility", []).append("Perform dynamic stretching routines daily.")
+            
+            if avg_scores["Speed"] < 70:
+                recommendations.setdefault("Speed", []).append("Integrate sprint intervals and plyometric exercises.")
+            
+            if not recommendations:
+                recommendations["General"] = ["Maintain current training balance. Keep improving!"]
+            
+            return recommendations
+        
+        except Exception as e:
+            print(f"Error generating performance recommendations: {e}")
+            recommendations["General"] = ["Error analyzing performance data."]
+            return recommendations
+    
+    # Default general recommendation if no data
+    recommendations["General"] = ["Focus on building balanced athletic ability."]
+    return recommendations
 # def generate_recommendations_ai(performance_data=None, athlete=None, form_analysis=None):
 #     if performance_data is not None and athlete is not None:
 #         try:
