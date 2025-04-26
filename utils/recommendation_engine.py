@@ -1,6 +1,10 @@
 import pandas as pd
 import numpy as np
 import logging
+import openai
+import os
+
+openai.api_key = os.getenv("OPENAI_API_KEY")  # Replace with your actual OpenAI API key
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -295,51 +299,46 @@ def _calculate_trend(data_series):
         return 'decreasing'
 
 
-# import openai
-# import os
-
-# openai.api_key = os.getenv("OPENAI_API_KEY")  # Replace with your actual OpenAI API key
-
-# def generate_recommendations_ai(performance_data=None, athlete=None, form_analysis=None):
-#     if performance_data is not None and athlete is not None:
-#         try:
-#             athlete_df = performance_data[performance_data['Athlete'] == athlete]
+def generate_recommendations_ai(performance_data=None, athlete=None, form_analysis=None):
+    if performance_data is not None and athlete is not None:
+        try:
+            athlete_df = performance_data[performance_data['Athlete'] == athlete]
             
-#             if athlete_df.empty:
-#                 return ["No performance data available for this athlete."]
+            if athlete_df.empty:
+                return ["No performance data available for this athlete."]
             
-#             avg_scores = athlete_df[["Speed", "Agility", "Strength", "Endurance", "Flexibility"]].mean().to_dict()
+            avg_scores = athlete_df[["Speed", "Agility", "Strength", "Endurance", "Flexibility"]].mean().to_dict()
             
-#             prompt = f"""
-# You are a professional sports coach.
+            prompt = f"""
+You are a professional sports coach.
 
-# Analyze the following performance metrics for an athlete:
+Analyze the following performance metrics for an athlete:
 
-# - Speed: {avg_scores.get('Speed', 'N/A')}
-# - Agility: {avg_scores.get('Agility', 'N/A')}
-# - Strength: {avg_scores.get('Strength', 'N/A')}
-# - Endurance: {avg_scores.get('Endurance', 'N/A')}
-# - Flexibility: {avg_scores.get('Flexibility', 'N/A')}
+- Speed: {avg_scores.get('Speed', 'N/A')}
+- Agility: {avg_scores.get('Agility', 'N/A')}
+- Strength: {avg_scores.get('Strength', 'N/A')}
+- Endurance: {avg_scores.get('Endurance', 'N/A')}
+- Flexibility: {avg_scores.get('Flexibility', 'N/A')}
 
-# Based on these scores:
-# - Identify weak areas.
-# - Suggest personalized training plans to improve.
-# - Focus on realistic, practical exercises.
-# - Keep it concise (4–5 action points).
+Based on these scores:
+- Identify weak areas.
+- Suggest personalized training plans to improve.
+- Focus on realistic, practical exercises.
+- Keep it concise (4–5 action points).
 
-# If all scores are high, recommend maintenance tips.
-# """
+If all scores are high, recommend maintenance tips.
+"""
 
-#             response = openai.ChatCompletion.create(
-#                 model="gpt-3.5-turbo",
-#                 messages=[{"role": "user", "content": prompt}]
-#             )
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[{"role": "user", "content": prompt}]
+            )
 
-#             reply = response['choices'][0]['message']['content']
-#             return reply.strip().split('\n')
+            reply = response['choices'][0]['message']['content']
+            return reply.strip().split('\n')
         
-#         except Exception as e:
-#             print(f"Error generating AI recommendations: {e}")
-#             return ["Could not generate personalized recommendations."]
+        except Exception as e:
+            print(f"Error generating AI recommendations: {e}")
+            return ["Could not generate personalized recommendations."]
     
-#     return ["No athlete selected or insufficient data."]
+    return ["No athlete selected or insufficient data."]
