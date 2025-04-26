@@ -984,8 +984,9 @@ elif page == "Knowledge Base":
         border-left: 5px solid #1E88E5;
     }
     .chat-message.assistant {
-        background-color: #f8f9fa;
-        border-left: 5px solid #4CAF50;
+    background-color: #333333;
+    border-left: 5px solid #4CAF50;
+    color: white;
     }
     .chat-message .content {
         display: inline-block;
