@@ -1194,7 +1194,6 @@ elif page == "Recommendations":
     <style>
     .recommendation-card {
         border-left: 4px solid #1E88E5;
-        background-color: rgba(255, 255, 255, 0.7);
         padding: 15px;
         border-radius: 5px;
         margin-bottom: 10px;
