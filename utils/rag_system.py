@@ -88,7 +88,9 @@ def query_knowledge_base(query, num_results=5):
     "tennis", "swimming", "running", "cycling", "hockey", "rugby", "golf",
     "wrestling", "boxing", "MMA", "skiing", "snowboarding", "climbing", "rowing",
     "cricket", "badminton", "track and field", "triathlon", "surfing", "diving",
-    "weightlifting", "bodybuilding", "yoga", "pilates"
+    "weightlifting", "bodybuilding", "yoga", "pilates", "muscle", "knee", "shouder", 
+    "calf", "ankle", "elbow", "wrist", "hip", "back", "core", "abs", "glutes", "quads", 
+    "hamstrings", "biceps", "triceps"
     ]
 
     
