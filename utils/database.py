@@ -4,21 +4,41 @@ Database module for the Sports Performance Analysis Assistant.
 This module handles the database connection and operations for storing 
 and retrieving athlete data, metrics, and analysis results.
 """
-
 import os
+import datetime
 import json
-import pickle
 import pandas as pd
-from sqlalchemy import create_engine, Column, Integer, String, Text, Float, DateTime, ForeignKey
+from sqlalchemy import create_engine, Column, Integer, String, Float, DateTime, Text, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship
-import datetime
 
-# Initialize SQLAlchemy components
-Base = declarative_base()
+# Get database URL from environment or use SQLite as fallback
 DATABASE_URL = os.environ.get('DATABASE_URL')
+if not DATABASE_URL:
+    # Use SQLite for local development or when no PostgreSQL is available
+    DATABASE_URL = "sqlite:///sports_performance.db"
+    
 engine = create_engine(DATABASE_URL)
+Base = declarative_base()
 Session = sessionmaker(bind=engine)
+
+# Rest of your database.py file remains the same
+
+# # Rest of your database.py file remains the same
+# import os
+# import json
+# import pickle
+# import pandas as pd
+# from sqlalchemy import create_engine, Column, Integer, String, Text, Float, DateTime, ForeignKey
+# from sqlalchemy.ext.declarative import declarative_base
+# from sqlalchemy.orm import sessionmaker, relationship
+# import datetime
+
+# # Initialize SQLAlchemy components
+# Base = declarative_base()
+# DATABASE_URL = os.environ.get('DATABASE_URL')
+# engine = create_engine(DATABASE_URL)
+# Session = sessionmaker(bind=engine)
 
 class Athlete(Base):
     """Athlete model for storing basic athlete information."""
