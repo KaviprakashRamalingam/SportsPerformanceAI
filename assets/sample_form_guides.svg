@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f0f0f0"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold">Proper Form Guidelines</text>
+  
+  <!-- Squat Form Guide -->
+  <g transform="translate(150, 150)">
+    <!-- Stick figure in proper squat position -->
+    <circle cx="50" cy="50" r="15" fill="none" stroke="#333" stroke-width="2"/> <!-- Head -->
+    <line x1="50" y1="65" x2="50" y2="120" stroke="#333" stroke-width="2"/> <!-- Torso -->
+    <line x1="50" y1="120" x2="20" y2="170" stroke="#333" stroke-width="2"/> <!-- Left thigh -->
+    <line x1="50" y1="120" x2="80" y2="170" stroke="#333" stroke-width="2"/> <!-- Right thigh -->
+    <line x1="20" y1="170" x2="10" y2="220" stroke="#333" stroke-width="2"/> <!-- Left calf -->
+    <line x1="80" y1="170" x2="90" y2="220" stroke="#333" stroke-width="2"/> <!-- Right calf -->
+    <line x1="50" y1="85" x2="10" y2="100" stroke="#333" stroke-width="2"/> <!-- Left arm -->
+    <line x1="50" y1="85" x2="90" y2="100" stroke="#333" stroke-width="2"/> <!-- Right arm -->
+    
+    <!-- Guidelines -->
+    <line x1="50" y1="30" x2="50" y2="240" stroke="#0066cc" stroke-width="1" stroke-dasharray="5,5"/> <!-- Vertical centerline -->
+    <path d="M 10,220 Q 50,230 90,220" stroke="#0066cc" stroke-width="1" stroke-dasharray="5,5" fill="none"/> <!-- Foot line -->
+    
+    <!-- Annotations -->
+    <text x="120" y="60" font-family="Arial" font-size="12">Keep head neutral</text>
+    <line x1="115" y1="60" x2="65" y2="50" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+    
+    <text x="120" y="100" font-family="Arial" font-size="12">Back straight</text>
+    <line x1="115" y1="100" x2="65" y2="90" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+    
+    <text x="120" y="160" font-family="Arial" font-size="12">Knees tracking over toes</text>
+    <line x1="115" y1="160" x2="80" y2="170" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+    
+    <text x="120" y="220" font-family="Arial" font-size="12">Weight in mid-foot</text>
+    <line x1="115" y1="220" x2="50" y2="220" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+    
+    <!-- Title -->
+    <text x="50" y="260" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Proper Squat Form</text>
+  </g>
+  
+  <!-- Deadlift Form Guide -->
+  <g transform="translate(500, 150)">
+    <!-- Stick figure in proper deadlift position -->
+    <circle cx="50" cy="60" r="15" fill="none" stroke="#333" stroke-width="2"/> <!-- Head -->
+    <line x1="50" y1="75" x2="50" y2="130" stroke="#333" stroke-width="2"/> <!-- Torso -->
+    <line x1="50" y1="130" x2="20" y2="190" stroke="#333" stroke-width="2"/> <!-- Left thigh -->
+    <line x1="50" y1="130" x2="80" y2="190" stroke="#333" stroke-width="2"/> <!-- Right thigh -->
+    <line x1="20" y1="190" x2="10" y2="220" stroke="#333" stroke-width="2"/> <!-- Left calf -->
+    <line x1="80" y1="190" x2="90" y2="220" stroke="#333" stroke-width="2"/> <!-- Right calf -->
+    <line x1="50" y1="105" x2="10" y2="130" stroke="#333" stroke-width="2"/> <!-- Left arm -->
+    <line x1="50" y1="105" x2="90" y2="130" stroke="#333" stroke-width="2"/> <!-- Right arm -->
+    
+    <!-- Guidelines -->
+    <line x1="50" y1="40" x2="50" y2="240" stroke="#0066cc" stroke-width="1" stroke-dasharray="5,5"/> <!-- Vertical centerline -->
+    <rect x="20" y="220" width="60" height="10" fill="#333"/> <!-- Barbell -->
+    
+    <!-- Annotations -->
+    <text x="-20" y="60" font-family="Arial" font-size="12" text-anchor="end">Neutral spine</text>
+    <line x1="-15" y1="60" x2="35" y2="60" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+    
+    <text x="-20" y="130" font-family="Arial" font-size="12" text-anchor="end">Hips back</text>
+    <line x1="-15" y1="130" x2="35" y2="130" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+    
+    <text x="-20" y="190" font-family="Arial" font-size="12" text-anchor="end">Knees slightly bent</text>
+    <line x1="-15" y1="190" x2="20" y2="190" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+    
+    <text x="-20" y="220" font-family="Arial" font-size="12" text-anchor="end">Bar over mid-foot</text>
+    <line x1="-15" y1="220" x2="20" y2="220" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+    
+    <!-- Title -->
+    <text x="50" y="260" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Proper Deadlift Form</text>
+  </g>
+  
+  <!-- Running Form Guide -->
+  <g transform="translate(150, 450)">
+    <!-- Stick figure running -->
+    <circle cx="50" cy="50" r="15" fill="none" stroke="#333" stroke-width="2"/> <!-- Head -->
+    <line x1="50" y1="65" x2="55" y2="110" stroke="#333" stroke-width="2"/> <!-- Torso -->
+    <line x1="55" y1="110" x2="90" y2="140" stroke="#333" stroke-width="2"/> <!-- Forward thigh -->
+    <line x1="55" y1="110" x2="20" y2="130" stroke="#333" stroke-width="2"/> <!-- Back thigh -->
+    <line x1="90" y1="140" x2="85" y2="180" stroke="#333" stroke-width="2"/> <!-- Forward calf -->
+    <line x1="20" y1="130" x2="0" y2="100" stroke="#333" stroke-width="2"/> <!-- Back calf -->
+    <line x1="50" y1="80" x2="80" y2="70" stroke="#333" stroke-width="2"/> <!-- Forward arm -->
+    <line x1="50" y1="80" x2="20" y2="60" stroke="#333" stroke-width="2"/> <!-- Back arm -->
+    
+    <!-- Guidelines -->
+    <path d="M 0,180 L 100,180" stroke="#0066cc" stroke-width="1" stroke-dasharray="5,5"/> <!-- Ground line -->
+    
+    <!-- Annotations -->
+    <text x="120" y="50" font-family="Arial" font-size="12">Head aligned with spine</text>
+    <line x1="115" y1="50" x2="65" y2="50" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+    
+    <text x="120" y="90" font-family="Arial" font-size="12">Slight forward lean</text>
+    <line x1="115" y1="90" x2="55" y2="90" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+    
+    <text x="120" y="130" font-family="Arial" font-size="12">Knees high for sprinting</text>
+    <line x1="115" y1="130" x2="90" y2="140" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+    
+    <text x="120" y="160" font-family="Arial" font-size="12">Land midfoot</text>
+    <line x1="115" y1="160" x2="85" y2="180" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+    
+    <!-- Title -->
+    <text x="50" y="210" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Proper Running Form</text>
+  </g>
+  
+  <!-- Plank Form Guide -->
+  <g transform="translate(500, 450)">
+    <!-- Stick figure in plank position -->
+    <circle cx="30" cy="60" r="15" fill="none" stroke="#333" stroke-width="2"/> <!-- Head -->
+    <line x1="30" y1="75" x2="100" y2="75" stroke="#333" stroke-width="2"/> <!-- Torso -->
+    <line x1="100" y1="75" x2="160" y2="75" stroke="#333" stroke-width="2"/> <!-- Legs -->
+    <line x1="45" y1="75" x2="45" y2="110" stroke="#333" stroke-width="2"/> <!-- Left arm -->
+    <line x1="45" y1="110" x2="44" y2="110" stroke="#333" stroke-width="2"/> <!-- Hand -->
+    
+    <!-- Guidelines -->
+    <line x1="0" y1="110" x2="180" y2="110" stroke="#0066cc" stroke-width="1" stroke-dasharray="5,5"/> <!-- Ground line -->
+    <line x1="30" y1="30" x2="30" y2="120" stroke="#0066cc" stroke-width="1" stroke-dasharray="5,5"/> <!-- Head alignment -->
+    <line x1="140" y1="30" x2="140" y2="120" stroke="#0066cc" stroke-width="1" stroke-dasharray="5,5"/> <!-- Heel alignment -->
+    
+    <!-- Annotations -->
+    <text x="0" y="40" font-family="Arial" font-size="12" text-anchor="start">Neutral neck</text>
+    <line x1="0" y1="45" x2="30" y2="60" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+    
+    <text x="50" y="40" font-family="Arial" font-size="12" text-anchor="start">Straight back</text>
+    <line x1="70" y1="45" x2="70" y2="75" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+    
+    <text x="120" y="40" font-family="Arial" font-size="12" text-anchor="start">Engaged core</text>
+    <line x1="130" y1="45" x2="100" y2="75" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+    
+    <text x="120" y="110" font-family="Arial" font-size="12" text-anchor="middle">Support on forearms</text>
+    <line x1="120" y1="105" x2="45" y2="110" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+    
+    <!-- Title -->
+    <text x="90" y="140" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Proper Plank Form</text>
+  </g>
+</svg>
