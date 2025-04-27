@@ -654,16 +654,15 @@ elif page == "Form Analysis":
             st.image(image, caption="Uploaded Image", use_column_width=True)
             
             # Save temporarily to validate
-        with tempfile.NamedTemporaryFile(delete=False, suffix='.jpg') as tmp_file:
-            image = Image.open(uploaded_image)
-            image.save(tmp_file.name)
-            temp_image_path = tmp_file.name
+            with tempfile.NamedTemporaryFile(delete=False, suffix='.jpg') as tmp_file:
+                image.save(tmp_file.name)
+                temp_image_path = tmp_file.name
 
-        # Validate before proceeding
-        from utils.image_analyzer import validate_image_for_pose  # You need to define this in image_analyzer.py!
+            # Validate before proceeding
+            from utils.image_analyzer import validate_image_for_pose  # You need to define this in image_analyzer.py!
 
-        if validate_image_for_pose(temp_image_path):
-            st.success("Human pose detected. You can now analyze.")
+            if validate_image_for_pose(temp_image_path):
+                st.success("Human pose detected. You can now analyze.")
 
             # Process the image
             if st.button("Analyze Form"):
