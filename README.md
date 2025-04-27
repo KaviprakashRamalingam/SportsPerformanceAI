@@ -2,7 +2,7 @@
 
 An advanced analytics tool that helps coaches and athletes track performance, analyze form, and generate personalized training recommendations using AI.
 
-![Application Screenshot](assets/app_screenshot.png)
+![Application Screenshot](assets/app.png)
 
 ## Features
 
