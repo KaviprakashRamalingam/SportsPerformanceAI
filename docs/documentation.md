@@ -1,6 +1,7 @@
 # Sports Performance Analysis Assistant - Documentation
 
 **Author:** Kaviprakash Ramalingam and Manish Dinesh Kumar Vanitha 
+
 **Date:** April 26, 2025  
 **Version:** 1.0.0
 
