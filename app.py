@@ -16,7 +16,6 @@ from utils.rag_system import query_knowledge_base, initialize_kb
 from utils.image_analyzer import analyze_form, detect_pose
 from utils.recommendation_engine import generate_recommendations
 from utils.recommendation_engine import generate_recommendations_manual
-from utils.image_analyzer import validate_image_for_pose
 from utils.database import (
     get_all_athletes, get_or_create_athlete, 
     save_performance_data, save_form_analysis,
@@ -654,17 +653,6 @@ elif page == "Form Analysis":
             image = Image.open(uploaded_image)
             st.image(image, caption="Uploaded Image", use_column_width=True)
             
-            # Save temporarily to validate
-            with tempfile.NamedTemporaryFile(delete=False, suffix='.jpg') as tmp_file:
-                image.save(tmp_file.name)
-                temp_image_path = tmp_file.name
-
-            # Validate before proceeding
-            from utils.image_analyzer import validate_image_for_pose  # You need to define this in image_analyzer.py!
-
-            if validate_image_for_pose(temp_image_path):
-                st.success("Human pose detected. You can now analyze.")
-
             # Process the image
             if st.button("Analyze Form"):
                 with st.spinner("Analyzing form..."):

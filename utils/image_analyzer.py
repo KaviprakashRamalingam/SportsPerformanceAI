@@ -6,29 +6,6 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Helper Function to validate if human pose exists
-def validate_image_for_pose(image_path):
-    import cv2
-    import mediapipe as mp
-
-    mp_pose = mp.solutions.pose
-    pose = mp_pose.Pose(static_image_mode=True)
-    
-    image = cv2.imread(image_path)
-    image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    results = pose.process(image_rgb)
-
-    if not results.pose_landmarks:
-        return False  # No human pose detected
-    else:
-        keypoints = results.pose_landmarks.landmark
-        valid_points = [point for point in keypoints if point.visibility > 0.5]
-        
-        if len(valid_points) < 5:  # Less than 5 body parts visible
-            return False
-        return True
-
-
 def analyze_form(image):
     """
     Analyze athlete form from an image.

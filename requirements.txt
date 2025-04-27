@@ -11,4 +11,3 @@ openai==1.10.0
 python-dotenv==1.0.0
 faker==19.2.0
 seaborn==0.12.2
-mediapipe==0.10.9
