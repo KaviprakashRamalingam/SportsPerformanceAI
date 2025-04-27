@@ -655,6 +655,7 @@ elif page == "Form Analysis":
             
             # Save temporarily to validate
         with tempfile.NamedTemporaryFile(delete=False, suffix='.jpg') as tmp_file:
+            image = Image.open(uploaded_image)
             image.save(tmp_file.name)
             temp_image_path = tmp_file.name
 
