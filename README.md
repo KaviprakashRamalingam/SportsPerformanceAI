@@ -14,7 +14,7 @@ An advanced analytics tool that helps coaches and athletes track performance, an
 
 ## Demo
 
-https://sports-performance-assistant.example.com
+https://sportsperformance.streamlit.app/
 
 ## Setup Instructions
 
@@ -23,6 +23,8 @@ https://sports-performance-assistant.example.com
 - Python 3.8 or higher
 - PostgreSQL database
 - Internet connection for RAG knowledge retrieval
+- OpenAI API key
+- Streamlit cloud (for hosting)
 
 ### Installation
 
@@ -96,6 +98,7 @@ The Sports Performance Analysis Assistant uses a modular architecture:
   - Image Analysis Engine
   - RAG Knowledge System
   - Recommendation Engine
+  - FAISS
 - **Database**: PostgreSQL for persistent storage
 
 For more details, see the [Architecture Documentation](docs/architecture.md).
